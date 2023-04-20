@@ -1,0 +1,155 @@
+/* Css is a coded from a combination of:
+   YouTube tutorial https://www.youtube.com/watch?v=2T1V_jTxVCg 
+   ChatGPT
+   W3
+   and Myself
+*/
+
+/* Code from IXD, Semester 2, Interaction Design 2 Navigation, Project 2 */
+@font-face {
+    font-family: 'AL'; /* Naming the font */
+    src: url(../fonts/Author-Light.otf); /* Accessing it from font folder */
+}
+
+/* Code from IXD, Semester 2, Interaction Design 2 Navigation, Project 2 */
+@font-face {
+    font-family: 'AB'; /* Naming the font */
+    src: url(../fonts/Author-Bold.otf); /* Accessing it from font folder */
+}
+
+/* Code from IXD, Semester 2, Interaction Design 2 Navigation, Project 2 */
+@font-face {
+    font-family: 'AR'; /* Naming the font */
+    src: url(../fonts/Author-Regular.otf); /* Accessing it from font folder */
+}
+
+/* Code is from https://www.w3schools.com/howto/howto_css_responsive_text.asp */
+/* If the screen size is 701px wide or more, font is this size */
+@media screen and (min-width: 701px) {
+
+    /* Setting text stuff for song name */
+    h1 {
+        font-family: 'AB';
+        font-size: 4rem;
+    }
+
+    /* Setting text stuff for song artist */
+    p {
+        font-family: 'AL';
+        font-size: 3rem;
+    }
+}
+
+/* Code is from https://www.w3schools.com/howto/howto_css_responsive_text.asp */
+/* If the screen size is 700px wide or less, font is this size */
+@media screen and (max-width: 700px) {
+
+    /* Setting text stuff for song name */
+    h1 {
+        font-family: 'AR'; /* Changed the font size to be regular cause small bold text be too chonky */
+        font-size: 5.5vw; /* vw means Relative to the viewport’s width */
+    }
+
+    /* Setting text stuff for song artist */
+    p {
+        font-family: 'AL';
+        font-size: 4vw; /* vw means Relative to the viewport’s width */
+    }
+}
+
+body {
+    display: flex; /*Always stay flexy */
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    height: 100vh; /* My viewport height */
+    margin: 0; /* Remove body margin */
+    background-color: #121212; /* Colour is black so that it matches my app theme */
+}
+
+.main-container {
+    display: flex; /* You need this to be flexy or else the justify-content aint gonna work */
+    max-width: 100%; /* This be 100 so its responsive */
+    padding: 0 20px; /* For more responsiveness */
+
+    /* Code from https://www.w3schools.com/cssref/tryit.php?filename=trycss_play_justify-content */
+    /* This is to make sure all my items are in the center of the screen */
+    justify-content: space-evenly; /* Position buttons on opposite ends of the container */
+}
+
+
+#hidden-token {
+    display: none; /* Needs to be hidden again */ 
+}
+
+h1{
+    padding-top: 0.75vw;
+} 
+
+.btn {
+    color: rgba(255, 255, 255, 0.90); /* Text color */
+    background-color: transparent; /* I want clear btns */
+    font-size: 5rem;
+    padding: 2rem;
+}
+
+/* Code from https://www.w3schools.com/css/css3_buttons.asp */
+.btn:hover {
+    color: rgba(255, 255, 255, 0.50); /* Text color */
+}
+
+/* Code from https://www.w3schools.com/css/css3_buttons.asp */
+.btn:active {
+    color: rgba(255, 255, 255); /* Text color */
+}
+
+
+/* Carousel container */
+.album-detail {
+    display: none; /* Default is hidden so we dont see other albums */
+}
+  
+/* You on the item and everthing is off  */
+.album-detail.active {
+    display: block;
+}
+  
+/* Carousel image style */
+.album-detail img {
+    width: 100%; /* Responsive stuff */
+    height: auto;
+}
+
+/* Carousel caption stuff */
+.carousel-caption {
+    background-color: rgba(255, 255, 255, 0.50); /* Background for text CHECK FOR ACCESSIBILITY */
+
+    /* Blur effect from https://webdesign.tutsplus.com/tutorials/how-to-create-a-frosted-glass-effect-in-css--cms-32535 */
+    backdrop-filter: blur(5px);
+    color: #121212; /* Text color */
+    
+    position: absolute; /* Inside the image */
+    bottom: 0; /* Align to bottom */
+    left: 0; /* Make it go to left edge */
+    right: 0; /* Make it go to right edge */  
+
+    /* New albums making the text look dooky without this */
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* We dont need these so we turn them off 
+   The W3 tutorial added these but it makes my thing too complex */
+.carousel-indicators,
+.carousel-control-prev,
+.carousel-control-next {
+    display: none;
+}
+
+/* This aint responsive */
+/* .logo{
+    position: relative;
+    width: 7.5vw;
+    z-index: 1;
+    left: 10%;
+    top: -30%;
+} */
